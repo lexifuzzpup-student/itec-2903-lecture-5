@@ -1,0 +1,3 @@
+*.db
+user_feedback_images
+__pycache__

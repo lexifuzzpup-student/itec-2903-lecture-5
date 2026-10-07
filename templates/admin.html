@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Admin page</h2>
+
+<p>Number of feedback reports: {{ feedback_count }}</p>
+
+{% for feedback in feedbacks %}
+    <div>
+        <p>{{ feedback.name }}</p>
+        <p>{{ feedback.email }}</p>
+        <p>{{ feedback.description }}</p>
+
+        {% if feedback.image_path %}
+            <img style="max-height: 300px;" src="{{ user_image_location }}/{{ feedback.image_path }}" alt="">
+        {% else %}
+            <p><i>No image</i></p>
+        {% endif %}
+    </div>
+    <hr>
+{% endfor %}
+
+{% endblock %}
